@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест на уровень IQ</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.2/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <body>
+      <header>
+        <div class="burger-menu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <ul class="header-menu">
+            <li>
+              <a data-goto=".header-menu" href="#" class="menu-item">Главная</a>
+            </li>
+            <li>
+              <a data-goto=".about-me-section" href="#" class="menu-item"
+                >Информация о тесте</a
+              >
+            </li>
+            <li>
+              <a data-goto=".photo-genres-list" href="#" class="menu-item"
+                >Пройти тест</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="banner" id="banner">
+        <div class="banner-container">
+          <p class="banner-title">Пройдите точный и быстрый</p>
+          <h1>тест на определение IQ</h1>
+          <img src="src/img/rain_bk3.png" alt="brain" />
+          <button class="banner-btn" id="test-btn">пройти тест</button>
+          <p class="banner-text">
+            И получите рекомендации по развитию своего интеллекта
+            <span class="banner-text-color"
+              >и улучшению финансового благосостояния и личной жизни</span
+            >
+          </p>
+          <iconify-icon
+            icon="mdi:arrow-down-circle"
+            style="color: white; cursor: pointer"
+            class="banner-text-more"
+          ></iconify-icon>
+          <p class="banner-text-more">подробнее</p>
+        </div>
+      </section>
+      <div class="card" id="card">
+        <section class="quote-section">
+          <div class="quote-container">
+            <img src="src/img/quote.png" alt="quote" />
+            <p class="quote">
+              Профессиональный IQ-тест позволяет не только определить
+              коэффициент вашего интеллекта, но и выработать список рекомендаций
+              для повышения этого показателя.
+            </p>
+            <img class="quote-img" src="src/img/quote.png" alt="quote" />
+          </div>
+        </section>
+        <section class="info-section">
+          <div class="info-container">
+            <p class="info-text">
+              Также по результатам теста <b>вы получите</b> подробные
+              <b>советы</b> по определению наиболее перспективной
+              <b>для вашего типа интеллекта сферы деятельности</b>, которая
+              принесет вам скорейший финансовый результат.
+            </p>
+            <img src="src/img/325-01.png" alt="cognitive-types" />
+            <button class="banner-btn">пройти тест</button>
+          </div>
+        </section>
+        <footer>
+          <img
+            src="/src/img/lightning_PNG9.png"
+            class="lightning-img1"
+            alt="lightning"
+          />
+          <div class="footer-container">
+            <p>
+              Прохождение теста займет у вас не более
+              <b><span class="footer-text-color">12 минут</span></b
+              >, а его <b>результаты</b> вы сможете
+              <b
+                ><span class="footer-text-color"
+                  >использовать всю жизнь.</span
+                ></b
+              >
+            </p>
+            <div class="footer-text">
+              <p>
+                Профессиональная интерпретация и детально
+                <b>проработанные рекомендации</b> позволят вам качественно
+                <b>изменить все аспекты своей жизни:</b> от финансового до
+                любовного.
+              </p>
+            </div>
+            <button class="footer-btn">пройти тест</button>
+          </div>
+          <img
+            src="/src/img/lightning_PNG9.png"
+            class="lightning-img2"
+            alt="lightning"
+          />
+          <p class="copyright">© 2019</p>
+        </footer>
+      </div>
+      <div class="test-container" id="test">
+        <div class="quiz-container">
+          <div id="progress-bar">
+            <div id="progress"></div>
+          </div>
+          <div id="question"></div>
+          <div id="choices"></div>
+        </div>
+      </div>
+      <script src="src/index.js"></script>
+    </body>
+  </body>
+</html>
