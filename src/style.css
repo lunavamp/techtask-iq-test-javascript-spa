@@ -10,7 +10,8 @@ body {
   font-family: "Roboto";
   font-style: normal;
   color: #ffffff;
-  background-image: url("/src/img/rain_bk2.png");
+  background: url("/src/img/rain_bk2.png");
+  background-repeat: repeat;
 }
 
 h1 {
@@ -400,7 +401,7 @@ input[type="radio"]:active {
 @media screen and (max-width: 760px) {
   body {
     font-size: 14px;
-    background-image: url("/src/img/rain_bk2.png");
+    background: url("/src/img/rain_bk2.png");
   }
 
   header {
