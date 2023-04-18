@@ -130,12 +130,15 @@ function updateProgressBar() {
   progressBar.style.width = `${percent}%`;
 }
 
-const card = document.querySelector(".card");
-const btn = document.querySelector(".banner-text-more");
-
-btn.addEventListener("click", () => {
-  card.classList.toggle("expand");
-});
+function expandCard() {
+  const card = document.querySelector(".card");
+  const btn = document.querySelector(".banner-text-btn");
+  btn.addEventListener("click", () => {
+    card.classList.toggle("expand");
+  });
+  
+}
+expandCard();
 
 document.getElementById("test-btn").addEventListener("click", function (event) {
   event.preventDefault();
