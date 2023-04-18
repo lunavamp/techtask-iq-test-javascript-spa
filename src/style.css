@@ -10,7 +10,7 @@ body {
   font-family: "Roboto";
   font-style: normal;
   color: #ffffff;
-  background: url("/src/img/rain_bk2.png");
+  background: url("../img/rain_bk2.png");
   background-repeat: repeat;
 }
 
@@ -401,7 +401,7 @@ input[type="radio"]:active {
 @media screen and (max-width: 760px) {
   body {
     font-size: 14px;
-    background: url("/src/img/rain_bk2.png");
+    background: url("../img/rain_bk2.png");
   }
 
   header {
