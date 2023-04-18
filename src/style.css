@@ -327,11 +327,11 @@ h1 {
   margin: 100px 0 38px;
 }
 
-#choices button {
+.quiz-container button {
   width: 189px;
   height: 41px;
-  background: #dadada;
-  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background: #ffc700;
+  color: #0d0c11;
   border-radius: 20px;
   border: none;
   font-family: "Merriweather";
@@ -341,27 +341,59 @@ h1 {
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8e8e8e;
 }
-#choices button:hover {
-  background: #ffc700;
-  color: #0d0c11;
+.quiz-container button:hover {
+  background: #dadada;
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+  color: #8e8e8e;
 }
 #choices label {
   display: block;
   text-align: left;
   font-size: 24px;
-  padding: 6px 35px;
-  margin: 8px auto;
   width: 60%;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: none;
   color: #fff;
   font-family: "PT Serif";
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.05em;
   cursor: pointer;
+}
+.choices-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 35px;
+  margin: 8px auto;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.choices-container-color {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  display: block;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+input[type="radio"].color-square {
+  width: 75px;
+  height: 75px;
+  border-radius: 0%;
+  margin: 0;
+}
+
+input[type="radio"]:focus.color-square {
+  border: 6px solid #ffc700;
+}
+
+#choices .color-label:active {
+  background-color: transparent;
 }
 
 input[type="radio"] {
@@ -394,7 +426,7 @@ input[type="radio"]:active {
   background-color: #2950c2;
 }
 
-#choices label:active {
+.choices-container:active {
   background-color: #ffc700;
 }
 
@@ -491,7 +523,7 @@ input[type="radio"]:active {
     max-width: 180px;
   }
 
-  #choices label {
+  .choices-container {
     width: 100%;
   }
 

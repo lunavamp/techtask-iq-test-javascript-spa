@@ -34,7 +34,17 @@ const choicesElement = document.getElementById("choices");
 const progressBar = document.getElementById("progress");
 let currentQuestion = 0;
 let score = 0;
-
+const colors = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "indigo",
+  "violet",
+  "pink",
+  "brown",
+];
 const questions = [
   {
     question: "Ваш пол:",
@@ -54,12 +64,12 @@ const questions = [
   },
   {
     question: "Выберите цвет, который сейчас наиболее Вам приятен:",
-    choices: ["", "", "", "", "", "", "", "", ""],
+    choices: colors,
   },
   {
     question:
       "Отдохните пару секунд, еще раз Выберите цвет, который сейчас наиболее Вам приятен:",
-    choices: ["", "", "", "", "", "", "", "", ""],
+    choices: colors,
   },
   {
     question: "Какой из городов лишний?",
@@ -94,19 +104,30 @@ function nextQuestion() {
     checkbox.type = "radio";
     checkbox.value = i;
     const label = document.createElement("label");
-    label.innerHTML = choice;
-    label.appendChild(checkbox);
-    choicesElement.appendChild(label);
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("choices-container");
+    label.innerHTML += choice;
+    newDiv.appendChild(label);
+    newDiv.appendChild(checkbox);
+    choicesElement.appendChild(newDiv);
+    if (q.question.includes("Выберите цвет")) {
+      label.style.display = "none";
+      checkbox.classList.add("color-square");
+      checkbox.style.backgroundColor = colors[i];
+      choicesElement.classList.add("color-grid");
+      newDiv.classList.add("choices-container-color");
+    }
   }
-  const nextButton = document.createElement("button");
-  nextButton.innerHTML = "Далее";
-  nextButton.addEventListener("click", function () {
-    checkAnswer();
-  });
-  choicesElement.appendChild(nextButton);
   updateProgressBar();
 }
 nextQuestion();
+
+const nextButton = document.createElement("button");
+nextButton.innerHTML = "Далее";
+nextButton.addEventListener("click", function () {
+  checkAnswer();
+});
+quizContainer.appendChild(nextButton);
 
 function checkAnswer() {
   const q = questions[currentQuestion];
