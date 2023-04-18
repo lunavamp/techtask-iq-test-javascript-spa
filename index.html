@@ -24,13 +24,13 @@
               <a data-goto=".header-menu" href="#" class="menu-item">Главная</a>
             </li>
             <li>
-              <a data-goto=".about-me-section" href="#" class="menu-item"
+              <a data-goto=".info-section" href="#" class="menu-item"
                 >Информация о тесте</a
               >
             </li>
             <li>
               <a
-                data-goto=".photo-genres-list"
+                data-goto=".footer-container"
                 href="#"
                 class="menu-item"
                 style="color: #ffc700"
@@ -53,16 +53,16 @@
             и улучшению финансового благосостояния и личной жизни
           </p>
           <iconify-icon
-            icon="mdi:arrow-down-circle"
+            icon="mdi:arrow-up-circle"
             style="color: white; cursor: pointer"
             width="24"
             height="24"
             class="banner-text-more"
           ></iconify-icon>
-          <button class="banner-text-more banner-text-btn">подробнее</button>
+          <button class="banner-text-more banner-text-btn">Подробнее</button>
         </div>
       </section>
-      <div class="card" id="card">
+      <div class="card expand" id="card">
         <section class="quote-section">
           <div class="quote-container">
             <img src="src/img/quote.png" alt="quote" />
@@ -77,13 +77,19 @@
         <section class="info-section">
           <div class="info-container">
             <p class="info-text">
-              Также по результатам теста <b>вы получите</b> подробные
-              <b>советы</b> по определению наиболее перспективной
-              <b>для вашего типа интеллекта сферы деятельности</b>, которая
-              принесет вам скорейший финансовый результат.
+              Также по результатам теста
+              <b style="text-transform: uppercase">вы получите</b> подробные
+              <b style="text-transform: uppercase">советы</b> по определению
+              наиболее перспективной
+              <b style="text-transform: uppercase"
+                >для вашего типа
+                <span style="text-transform: lowercase">интеллекта</span> сферы
+                деятельности</b
+              >, <br />
+              которая принесет вам скорейший финансовый результат.
             </p>
             <img src="src/img/325-01.png" alt="cognitive-types" />
-            <button class="banner-btn">пройти тест</button>
+            <button class="banner-btn info-btn">пройти тест</button>
           </div>
         </section>
         <footer>

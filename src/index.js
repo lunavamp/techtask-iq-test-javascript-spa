@@ -136,7 +136,6 @@ function expandCard() {
   btn.addEventListener("click", () => {
     card.classList.toggle("expand");
   });
-  
 }
 expandCard();
 
