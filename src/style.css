@@ -156,7 +156,7 @@ h1 {
       rgba(38, 91, 199, 0.96) 40.62%,
       rgba(39, 98, 187, 0) 85.42%
     ),
-    url("./img/image.png");
+    url("../img/image.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
