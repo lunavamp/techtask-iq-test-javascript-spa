@@ -59,6 +59,24 @@ a {
   text-transform: uppercase;
 }
 
+#quiz-brain {
+  display: none;
+  width: 48px;
+  margin: 0 9px;
+}
+
+#menu-title {
+  display: none;
+  font-family: "Yeseva One";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffc700;
+  margin-top: 18px;
+}
+
 /* banner */
 
 .banner-container {
@@ -176,7 +194,7 @@ h1 {
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.05em;
-  margin: 15px auto;
+  margin: 65px auto;
   max-width: 800px;
 }
 
@@ -283,7 +301,7 @@ footer > img {
   display: inline-block;
   position: absolute;
   margin: 0 auto;
-  top: 200px;
+  top: 230px;
   right: 290px;
   width: 200px;
   height: 44px;
@@ -466,10 +484,11 @@ input[type="radio"]:active {
 }
 
 #timer-container {
-  width: 80%;
+  width: 90%;
   margin: 50px auto;
   text-align: center;
   display: none;
+  max-width: 480px;
 }
 
 #timer {
@@ -524,10 +543,6 @@ input[type="radio"]:active {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   bottom: -50px;
-}
-
-#timer-container {
-  max-width: 500px;
 }
 
 #timer-container .result-title {
@@ -589,6 +604,16 @@ input[type="radio"]:active {
   font-size: 20px;
 }
 
+#output {
+  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  white-space: pre-wrap;
+  background-color: #dadada13;
+  border-radius: 15px;
+}
+
 @media screen and (max-width: 760px) {
   body {
     font-size: 14px;
@@ -596,7 +621,7 @@ input[type="radio"]:active {
   }
 
   header {
-    padding: 21px 15px;
+    padding: 0 15px;
     display: block;
   }
 
@@ -604,6 +629,7 @@ input[type="radio"]:active {
   .burger-menu {
     display: flex;
     cursor: pointer;
+    height: 46px;
   }
 
   .burger-icon {
@@ -612,6 +638,7 @@ input[type="radio"]:active {
     justify-content: space-between;
     width: 26px;
     height: 20px;
+    margin-top: 14px;
   }
 
   .burger-icon span {
@@ -723,5 +750,8 @@ input[type="radio"]:active {
   #question {
     margin-top: 28px;
     font-size: 19px;
+  }
+  #timer-container .result-text-info-container {
+    max-width: 256px;
   }
 }

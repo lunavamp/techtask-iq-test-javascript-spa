@@ -148,6 +148,7 @@ function showResults() {
   quizContainer.style.display = "none";
   timerContainer.style.display = "block";
   callButton.style.display = "block";
+  document.getElementById("menu-title").innerText = "Готово!";
 }
 
 function updateProgressBar() {
@@ -169,6 +170,8 @@ document.getElementById("test-btn").addEventListener("click", function (event) {
   document.getElementById("banner").style.display = "none";
   document.getElementById("card").style.display = "none";
   document.getElementById("test").style.display = "block";
+  document.getElementById("quiz-brain").style.display = "block";
+  document.getElementById("menu-title").style.display = "block";
 });
 
 // timer
@@ -204,7 +207,24 @@ function startTimer() {
 }
 startTimer();
 
-// When the call now button is clicked, do something
+const output = document.getElementById("output");
+
 callButton.addEventListener("click", () => {
-  // Do something here...
+  fetch("https://swapi.dev/api/people/1/")
+    .then((response) => response.json())
+    .then((data) => {
+      const formattedData = `
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Height:</strong> ${data.height} cm</p>
+        <p><strong>Weight:</strong> ${data.mass} kg</p>
+        <p><strong>Hair color:</strong> ${data.hair_color}</p>
+        <p><strong>Skin color:</strong> ${data.skin_color}</p>
+        <p><strong>Eye color:</strong> ${data.eye_color}</p>
+        <p><strong>Birth year:</strong> ${data.birth_year}</p>
+        <p><strong>Gender:</strong> ${data.gender}</p>
+      `;
+      output.innerHTML = formattedData;
+    })
+    .catch((error) => console.error(error));
+  document.getElementById("output").style.display = "block";
 });
