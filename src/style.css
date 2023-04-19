@@ -357,7 +357,7 @@ footer > img {
   font-size: 28px;
   font-family: "PT Serif";
   font-weight: 400;
-  margin: 100px 0 38px;
+  margin: 100px 10px 38px;
 }
 
 .quiz-container button {
@@ -398,6 +398,7 @@ footer > img {
   margin: 8px auto;
   display: flex;
   flex-direction: row-reverse;
+  max-width: 800px;
 }
 
 .choices-container-color {
@@ -418,6 +419,7 @@ input[type="radio"].color-square {
   width: 75px;
   height: 75px;
   border-radius: 0%;
+  border: 0;
   margin: 0;
 }
 
@@ -593,5 +595,9 @@ input[type="radio"]:active {
 
   .footer-container > p {
     max-width: 262px;
+  }
+  #question {
+    margin-top: 28px;
+    font-size: 19px;
   }
 }

@@ -35,15 +35,15 @@ const progressBar = document.getElementById("progress");
 let currentQuestion = 0;
 let score = 0;
 const colors = [
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "violet",
-  "pink",
-  "brown",
+  "#A8A8A8",
+  "#0000A9",
+  "#00A701",
+  "#F60100",
+  "#FDFF19",
+  "#A95403",
+  "#000000",
+  "#850068",
+  "#46B3AC",
 ];
 const questions = [
   {
@@ -74,10 +74,6 @@ const questions = [
   {
     question: "Какой из городов лишний?",
     choices: ["Вашингтон", "Лондон", "Париж", "Нью-Йорк", "Москва", "Оттава"],
-  },
-  {
-    question: "Выберите правильную фигуру из четырёх пронумерованных.",
-    choices: ["1", "2", "3", "4"],
   },
   {
     question: "Вам привычнее и важнее:",
@@ -116,7 +112,18 @@ function nextQuestion() {
       checkbox.style.backgroundColor = colors[i];
       choicesElement.classList.add("color-grid");
       newDiv.classList.add("choices-container-color");
+    } else {
+      choicesElement.classList.remove("color-grid");
     }
+  }
+  if (q.question.includes("Вставьте подходящее")) {
+    const img = document.createElement("img");
+    img.src = "./img/image1.png";
+    const imgDiv = document.createElement("div");
+    imgDiv.classList.add("image-container");
+    imgDiv.appendChild(img);
+    quizContainer.insertBefore(imgDiv, choicesElement);
+    choicesElement.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
   }
   updateProgressBar();
 }
