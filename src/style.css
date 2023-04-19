@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;400;500;700&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;400;500;700;900&family=Yeseva+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -463,6 +463,130 @@ input[type="radio"]:active {
 
 .choices-container:active {
   background-color: #ffc700;
+}
+
+#timer-container {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+  display: none;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+#timer p {
+  margin: 0;
+}
+
+#timer p:not(:last-child) {
+  margin-right: 10px;
+}
+
+#call-now-button {
+  background: #eb1b00;
+  border-radius: 5px;
+  color: #fff;
+  padding: 34px 15px 14px 0;
+  border: none;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease-in-out;
+  text-align: left;
+  margin: 0 auto;
+}
+
+#call-now-button:hover {
+  background-color: #740f02;
+}
+
+.phone-icon {
+  margin: 0 16px 15px;
+  float: left;
+}
+
+.latin-text {
+  position: absolute;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  bottom: -50px;
+}
+
+#timer-container {
+  max-width: 500px;
+}
+
+#timer-container .result-title {
+  font-family: "PT Serif";
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#timer-container .result-text {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.result-text-info-container p {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#timer-container .result-text-info-container {
+  background: #1c2741;
+  border-radius: 6px;
+  padding: 15px 12px;
+  margin: 12px auto;
+}
+#timer-container > h2 {
+  font-family: "PT Serif";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3bde7c;
+  margin-top: 22px;
+}
+
+#timer .timer-text {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #3bde7c;
+}
+#timer .timer-minutes {
+  font-size: 20px;
 }
 
 @media screen and (max-width: 760px) {

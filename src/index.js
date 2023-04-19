@@ -33,7 +33,6 @@ const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
 const progressBar = document.getElementById("progress");
 let currentQuestion = 0;
-let score = 0;
 const colors = [
   "#A8A8A8",
   "#0000A9",
@@ -123,7 +122,6 @@ function nextQuestion() {
     imgDiv.classList.add("image-container");
     imgDiv.appendChild(img);
     quizContainer.insertBefore(imgDiv, choicesElement);
-    choicesElement.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
   }
   updateProgressBar();
 }
@@ -148,9 +146,8 @@ function checkAnswer() {
 
 function showResults() {
   quizContainer.style.display = "none";
-  const resultContainer = document.createElement("div");
-  resultContainer.innerHTML = `You scored ${score} out of ${questions.length} questions.`;
-  document.body.appendChild(resultContainer);
+  timerContainer.style.display = "block";
+  callButton.style.display = "block";
 }
 
 function updateProgressBar() {
@@ -172,4 +169,42 @@ document.getElementById("test-btn").addEventListener("click", function (event) {
   document.getElementById("banner").style.display = "none";
   document.getElementById("card").style.display = "none";
   document.getElementById("test").style.display = "block";
+});
+
+// timer
+
+const timerContainer = document.getElementById("timer-container");
+const timerDisplay = document.getElementById("timer");
+const callButton = document.getElementById("call-now-button");
+
+let timeLeft = 600;
+
+function updateTimer() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  const minutesDisplay = minutes < 10 ? "0" + minutes : minutes;
+  const secondsDisplay = seconds < 10 ? "0" + seconds : seconds;
+  timerDisplay.innerHTML = `
+  <p class="timer-text">Звоните скорее, запись доступна всего <span class="timer-minutes">${minutesDisplay}:${secondsDisplay}</span> минут
+  </p>
+`;
+}
+
+function startTimer() {
+  updateTimer();
+  const timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+      timerContainer.style.display = "none";
+      callButton.style.display = "block";
+    }
+  }, 1000);
+}
+startTimer();
+
+// When the call now button is clicked, do something
+callButton.addEventListener("click", () => {
+  // Do something here...
 });
