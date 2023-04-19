@@ -27,6 +27,16 @@ menuLinks.forEach((link) => {
   });
 });
 
+// expand footer
+function expandCard() {
+  const card = document.querySelector(".card");
+  const btn = document.querySelector(".banner-text-btn");
+  btn.addEventListener("click", () => {
+    card.classList.toggle("expand");
+  });
+}
+expandCard();
+
 //quiz
 const quizContainer = document.querySelector(".quiz-container");
 const questionElement = document.getElementById("question");
@@ -144,26 +154,17 @@ function checkAnswer() {
   }
 }
 
+function updateProgressBar() {
+  const percent = (currentQuestion / questions.length) * 100;
+  progressBar.style.width = `${percent}%`;
+}
+
 function showResults() {
   quizContainer.style.display = "none";
   timerContainer.style.display = "block";
   callButton.style.display = "block";
   document.getElementById("menu-title").innerText = "Готово!";
 }
-
-function updateProgressBar() {
-  const percent = (currentQuestion / questions.length) * 100;
-  progressBar.style.width = `${percent}%`;
-}
-
-function expandCard() {
-  const card = document.querySelector(".card");
-  const btn = document.querySelector(".banner-text-btn");
-  btn.addEventListener("click", () => {
-    card.classList.toggle("expand");
-  });
-}
-expandCard();
 
 document.getElementById("test-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -179,7 +180,6 @@ document.getElementById("test-btn").addEventListener("click", function (event) {
 const timerContainer = document.getElementById("timer-container");
 const timerDisplay = document.getElementById("timer");
 const callButton = document.getElementById("call-now-button");
-
 let timeLeft = 600;
 
 function updateTimer() {
@@ -206,6 +206,8 @@ function startTimer() {
   }, 1000);
 }
 startTimer();
+
+// get API data
 
 const output = document.getElementById("output");
 
