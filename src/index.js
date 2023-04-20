@@ -54,6 +54,7 @@ const colors = [
   "#850068",
   "#46B3AC",
 ];
+let randomColors = colors.slice().sort(() => Math.random() - 0.5);
 const questions = [
   {
     question: "Ваш пол:",
@@ -93,6 +94,15 @@ const questions = [
     ],
   },
   {
+    question:
+      "Какое определение, по-Вашему, больше подходит к этому геометрическому изображению:",
+    choices: [
+      "Оно остроконечное",
+      "Оно устойчиво",
+      "Оно находится в состоянии равновесия",
+    ],
+  },
+  {
     question: "Вставьте подходящее число",
     choices: ["34", "36", "53", "44", "66", "42"],
   },
@@ -115,6 +125,7 @@ function nextQuestion() {
     newDiv.appendChild(label);
     newDiv.appendChild(checkbox);
     choicesElement.appendChild(newDiv);
+
     if (q.question.includes("Выберите цвет")) {
       label.style.display = "none";
       checkbox.classList.add("color-square");
@@ -125,6 +136,7 @@ function nextQuestion() {
       choicesElement.classList.remove("color-grid");
     }
   }
+
   if (q.question.includes("Вставьте подходящее")) {
     const img = document.createElement("img");
     img.src = "./img/image1.png";
@@ -132,6 +144,20 @@ function nextQuestion() {
     imgDiv.classList.add("image-container");
     imgDiv.appendChild(img);
     quizContainer.insertBefore(imgDiv, choicesElement);
+  }
+
+  if (q.question.includes("Какое определение")) {
+    const img2 = document.createElement("img");
+    img2.src = "./img/image2.png";
+    const imgDiv2 = document.createElement("div");
+    imgDiv2.classList.add("image-container2");
+    imgDiv2.appendChild(img2);
+    quizContainer.insertBefore(imgDiv2, choicesElement);
+  } else {
+    const imgDiv2 = document.querySelector(".image-container2");
+    if (imgDiv2) {
+      imgDiv2.remove();
+    }
   }
   updateProgressBar();
 }
@@ -168,7 +194,7 @@ buttons.forEach((button) => {
     document.getElementById("banner").style.display = "none";
     document.getElementById("card").style.display = "none";
     document.getElementById("test").style.display = "block";
-    document.getElementById("quiz-brain").style.display = "block";
+    document.getElementById("quiz-brain-img").style.display = "block";
     document.getElementById("menu-title").style.display = "block";
   });
 });
@@ -188,6 +214,7 @@ function showTimerContainer() {
   const timerContainer = document.getElementById("timer-container");
   timerContainer.style.display = "block";
   callButton.style.display = "block";
+  document.getElementById("menu-title").style.fontSize = "20px";
   document.getElementById("menu-title").innerText = "Готово!";
 }
 
@@ -236,7 +263,6 @@ callButton.addEventListener("click", () => {
         <p><strong>Height:</strong> ${data.height} cm</p>
         <p><strong>Weight:</strong> ${data.mass} kg</p>
         <p><strong>Hair color:</strong> ${data.hair_color}</p>
-        <p><strong>Skin color:</strong> ${data.skin_color}</p>
         <p><strong>Eye color:</strong> ${data.eye_color}</p>
         <p><strong>Birth year:</strong> ${data.birth_year}</p>
         <p><strong>Gender:</strong> ${data.gender}</p>

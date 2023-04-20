@@ -59,7 +59,7 @@ a {
   text-transform: uppercase;
 }
 
-#quiz-brain {
+#quiz-brain-img {
   display: none;
   width: 48px;
   margin: 0 9px;
@@ -174,7 +174,7 @@ h1 {
 
 .quote-container {
   margin: 0 auto;
-  padding: 43px 22px 30px;
+  padding: 43px 250px 30px;
   position: relative;
   background-image: radial-gradient(
       84.34% 50.29% at 48.75% 49.71%,
@@ -206,7 +206,8 @@ h1 {
 .quote-img {
   position: absolute;
   transform: rotate(-180deg);
-  right: 32px;
+  right: 250px;
+  bottom: 32px;
 }
 
 /* info section */
@@ -226,7 +227,7 @@ h1 {
 
 .info-container img {
   margin-top: 35px;
-  width: 500px;
+  width: 450px;
 }
 
 .info-text {
@@ -243,20 +244,18 @@ footer {
   position: relative;
 }
 
-footer > img {
-  position: absolute;
-  width: 165px;
-  height: 165px;
-  z-index: 0;
-}
 .lightning-img1 {
+  position: absolute;
   right: 0;
-  top: 0;
+  z-index: -1;
+  top: 64px;
 }
 .lightning-img2 {
+  position: absolute;
   transform: scaleX(-1);
   left: 0;
-  bottom: 0;
+  bottom: 50px;
+  z-index: -1;
 }
 
 .footer-container {
@@ -264,7 +263,8 @@ footer > img {
   max-width: 800px;
   height: 420px;
   text-align: left;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-container > p {
@@ -278,18 +278,14 @@ footer > img {
 }
 
 .footer-text {
-  display: block;
   background: rgba(243, 243, 242, 0.8);
   border-radius: 20px;
   padding: 30px 14px;
   margin: 14px 0 33px;
-  position: absolute;
-  z-index: 1;
   overflow: auto;
   max-height: 80px;
 }
 .footer-text p {
-  display: block;
   font-family: "Merriweather";
   font-weight: 400;
   line-height: 23px;
@@ -298,11 +294,7 @@ footer > img {
 }
 
 .footer-btn {
-  display: inline-block;
-  position: absolute;
   margin: 0 auto;
-  top: 250px;
-  right: 290px;
   width: 200px;
   height: 44px;
   border: 1px solid #ffffff;
@@ -571,6 +563,23 @@ input[type="radio"]:active {
   float: left;
 }
 
+#test {
+  position: relative;
+}
+
+.lightning-img3 {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+.lightning-img4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
 .latin-text {
   position: absolute;
   font-family: "Roboto";
@@ -581,7 +590,7 @@ input[type="radio"]:active {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-  bottom: -50px;
+  bottom: -42px;
 }
 
 #output {
@@ -742,6 +751,14 @@ input[type="radio"]:active {
     margin: 17px auto 0;
   }
 
+  .quote-container {
+    padding: 43px 22px 30px;
+  }
+
+  .quote-img {
+    right: 32px;
+  }
+
   .info-container,
   .footer-container {
     padding: 0 12px;
@@ -762,10 +779,6 @@ input[type="radio"]:active {
   }
   .footer-container {
     height: 100vh;
-  }
-  .footer-btn {
-    right: 40%;
-    left: 20%;
   }
 
   .footer-container > p {
