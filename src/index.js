@@ -166,13 +166,17 @@ function showResults() {
   document.getElementById("menu-title").innerText = "Готово!";
 }
 
-document.getElementById("test-btn").addEventListener("click", function (event) {
-  event.preventDefault();
-  document.getElementById("banner").style.display = "none";
-  document.getElementById("card").style.display = "none";
-  document.getElementById("test").style.display = "block";
-  document.getElementById("quiz-brain").style.display = "block";
-  document.getElementById("menu-title").style.display = "block";
+const buttons = document.querySelectorAll(".test-btn");
+document;
+buttons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("banner").style.display = "none";
+    document.getElementById("card").style.display = "none";
+    document.getElementById("test").style.display = "block";
+    document.getElementById("quiz-brain").style.display = "block";
+    document.getElementById("menu-title").style.display = "block";
+  });
 });
 
 // timer
