@@ -457,19 +457,14 @@ input[type="radio"] {
   border: 1px solid currentColor;
   border-radius: 50%;
   float: left;
-  margin: 0 39px;
+  margin-right: 39px;
 }
 
 input[type="radio"]::before {
   content: "";
   width: 20px;
   height: 20px;
-  transition: 120ms transform ease-in-out;
   background-color: transparent;
-}
-
-input[type="radio"]:checked::before {
-  transform: scale(1);
 }
 
 input[type="radio"]:focus,
@@ -596,6 +591,50 @@ input[type="radio"]:active {
   white-space: pre-wrap;
   background-color: #dadada13;
   border-radius: 15px;
+}
+#loader-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+}
+
+.loader {
+  background: url("../img/loader.svg");
+  width: 65px;
+  height: 65px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader-container h3 {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 38px;
+  margin-top: 35px;
+}
+
+#loader-container p {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  max-width: 500px;
+  margin-top: 27px;
 }
 
 @media screen and (max-width: 760px) {
@@ -737,5 +776,15 @@ input[type="radio"]:active {
   }
   #timer-container .result-text-info-container {
     max-width: 256px;
+  }
+  #loader-container h3 {
+    font-size: 23px;
+    max-width: 237px;
+  }
+
+  #loader-container p {
+    font-weight: 400;
+    font-size: 14px;
+    max-width: 276px;
   }
 }

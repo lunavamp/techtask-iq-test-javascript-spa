@@ -148,7 +148,8 @@ function checkAnswer() {
   const q = questions[currentQuestion];
   currentQuestion++;
   if (currentQuestion === questions.length) {
-    showResults();
+    showLoader();
+    quizContainer.style.display = "none";
   } else {
     nextQuestion();
   }
@@ -157,13 +158,6 @@ function checkAnswer() {
 function updateProgressBar() {
   const percent = (currentQuestion / questions.length) * 100;
   progressBar.style.width = `${percent}%`;
-}
-
-function showResults() {
-  quizContainer.style.display = "none";
-  timerContainer.style.display = "block";
-  callButton.style.display = "block";
-  document.getElementById("menu-title").innerText = "Готово!";
 }
 
 const buttons = document.querySelectorAll(".test-btn");
@@ -178,6 +172,24 @@ buttons.forEach((button) => {
     document.getElementById("menu-title").style.display = "block";
   });
 });
+
+// loader
+
+function showLoader() {
+  const loaderContainer = document.getElementById("loader-container");
+  loaderContainer.style.display = "flex";
+  setTimeout(() => {
+    loaderContainer.style.display = "none";
+    showTimerContainer();
+  }, 2000);
+}
+
+function showTimerContainer() {
+  const timerContainer = document.getElementById("timer-container");
+  timerContainer.style.display = "block";
+  callButton.style.display = "block";
+  document.getElementById("menu-title").innerText = "Готово!";
+}
 
 // timer
 
