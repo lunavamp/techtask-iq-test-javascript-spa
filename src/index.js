@@ -30,9 +30,11 @@ menuLinks.forEach((link) => {
 // expand footer
 function expandCard() {
   const card = document.querySelector(".card");
-  const btn = document.querySelector(".banner-text-btn");
-  btn.addEventListener("click", () => {
-    card.classList.toggle("expand");
+  const btn = document.querySelectorAll(".banner-more-btn");
+  btn.forEach((button) => {
+    button.addEventListener("click", () => {
+      card.classList.toggle("expand");
+    });
   });
 }
 expandCard();

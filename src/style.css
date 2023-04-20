@@ -143,6 +143,7 @@ h1 {
   text-align: center;
   letter-spacing: 0.05em;
   margin-top: 3px;
+  cursor: pointer;
 }
 
 .banner-text-btn {
@@ -476,13 +477,72 @@ input[type="radio"]:active {
 .choices-container:active {
   background-color: #ffc700;
 }
-
+/* timer */
 #timer-container {
   width: 90%;
   margin: 50px auto;
   text-align: center;
   display: none;
-  max-width: 480px;
+  max-width: 600px;
+}
+
+#timer-container .result-title {
+  font-family: "PT Serif";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#timer-container .result-text {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.result-text-info-container p {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#timer-container .result-text-info-container {
+  background: #1c2741;
+  border-radius: 6px;
+  padding: 15px 12px;
+  margin: 22px auto;
+}
+#timer-container > h2 {
+  font-family: "PT Serif";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3bde7c;
+  margin-top: 35px;
+}
+
+#timer .timer-text {
+  font-family: "PT Serif";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #3bde7c;
+}
+#timer .timer-minutes {
+  font-size: 24px;
 }
 
 #call-now-button {
@@ -499,7 +559,7 @@ input[type="radio"]:active {
   letter-spacing: 0.05em;
   transition: background-color 0.2s ease-in-out;
   text-align: left;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 #call-now-button:hover {
@@ -522,65 +582,6 @@ input[type="radio"]:active {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   bottom: -50px;
-}
-
-#timer-container .result-title {
-  font-family: "PT Serif";
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-#timer-container .result-text {
-  font-family: "PT Serif";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  margin-top: 12px;
-}
-
-.result-text-info-container p {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 8px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-#timer-container .result-text-info-container {
-  background: #1c2741;
-  border-radius: 6px;
-  padding: 15px 12px;
-  margin: 12px auto;
-}
-#timer-container > h2 {
-  font-family: "PT Serif";
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #3bde7c;
-  margin-top: 22px;
-}
-
-#timer .timer-text {
-  font-family: "PT Serif";
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 30px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: #3bde7c;
-}
-#timer .timer-minutes {
-  font-size: 20px;
 }
 
 #output {
@@ -774,9 +775,7 @@ input[type="radio"]:active {
     margin-top: 28px;
     font-size: 19px;
   }
-  #timer-container .result-text-info-container {
-    max-width: 256px;
-  }
+
   #loader-container h3 {
     font-size: 23px;
     max-width: 237px;
@@ -786,5 +785,37 @@ input[type="radio"]:active {
     font-weight: 400;
     font-size: 14px;
     max-width: 276px;
+  }
+
+  #timer-container .result-title {
+    font-size: 15px;
+  }
+
+  #timer-container .result-text {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  .result-text-info-container p {
+    font-size: 8px;
+  }
+  #timer-container .result-text-info-container {
+    margin: 12px auto;
+    max-width: 256px;
+  }
+  #timer-container > h2 {
+    font-size: 18px;
+    margin-top: 22px;
+  }
+
+  #timer .timer-text {
+    font-size: 11px;
+  }
+  #timer .timer-minutes {
+    font-size: 20px;
+  }
+
+  #call-now-button {
+    margin: 0 auto;
   }
 }
